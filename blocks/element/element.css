@@ -1,0 +1,13 @@
+.element {
+    height: 361px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 62px;
+    grid-template-rows: 282px 1fr;
+    grid-template-areas:
+    "image image"
+    "title like";
+}
