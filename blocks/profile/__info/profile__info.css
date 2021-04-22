@@ -1,0 +1,18 @@
+.profile__info {
+    padding: 0 0 0 30px;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 0 auto 60px;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+    ". name edit-btn"
+    "vocation vocation vocation";
+}
+
+@media (max-width: 937px) {
+    .profile__info {
+        padding: 0;
+        max-width: 100%;
+        grid-template-columns: 38px auto 38px;
+    }
+}
