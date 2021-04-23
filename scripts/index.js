@@ -24,8 +24,6 @@ function popupSave (evt) {
     popup.classList.remove('popup_opened_open')
     profileName.textContent = inputName.value
     profileVocation.textContent = inputVocation.value
-    inputName.value = ''    
-    inputVocation.value = ''
 };
 
 let editBtn = document.querySelector('.profile__edit-btn');
