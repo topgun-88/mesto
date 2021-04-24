@@ -4,10 +4,10 @@
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
-    margin: 34px 36px 24px;
+    margin: 34px 36px 16px;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 600px) {
     .popup__heading {
         font-size: 18px;
         line-height: 22px;

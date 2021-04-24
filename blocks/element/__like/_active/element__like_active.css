@@ -1,7 +1,7 @@
-.element__like_status_active {
+.element__like_active {
     background-image: url(images/like_active.svg);
 }
 
-.element__like_status_active:hover {
+.element__like_active:hover {
     opacity: 1;
 }

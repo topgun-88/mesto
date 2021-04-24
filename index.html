@@ -7,18 +7,8 @@
   <title>Место</title>
 </head>
 <body class="body">
-    <div class="popup">
-        <form class="popup__container" name="edit-form">
-            <button class="popup__close" type="reset"></button>
-            <h2 class="popup__heading">Редактировать профиль</h2>
-            <input class="popup__input" type="text" name="profile-name" id="profile-name" placeholder="" required>
-            <input class="popup__input" type="text" name="profile-vocation" id="profile-vocation" placeholder="" required>
-            <button class="popup__save-btn" type="submit">Сохранить</button>
-        </form>
-    </div>
     <header class="header">
         <div class="header__logo"></div>
-        <div class="header__line"></div>
     </header>
     <main class="main">
         <section class="profile">
@@ -34,27 +24,27 @@
             <div class="element">
                 <img src="blocks/element/__image/images/karachaevsk.jpg" alt="Карачаевск" class="element__image">
                 <h2 class="element__title">Карачаевск</h2>
-                <button class="element__like element__like_status_active"></button>
+                <button class="element__like element__like_active"></button>
             </div>
             <div class="element">
                 <img src="blocks/element/__image/images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__like"></button>
+                <button class="element__like" type="button"></button>
             </div>
             <div class="element">
                 <img src="blocks/element/__image/images/dombay.jpg" alt="Домбай" class="element__image">
                 <h2 class="element__title">Домбай</h2>
-                <button class="element__like"></button>
+                <button class="element__like" type="button"></button>
             </div>
             <div class="element">
                 <img src="blocks/element/__image/images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
                 <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__like"></button>
+                <button class="element__like" type="button"></button>
             </div>
             <div class="element">
                 <img src="blocks/element/__image/images/dombay.jpg" alt="Домбай" class="element__image">
                 <h2 class="element__title">Домбай</h2>
-                <button class="element__like"></button>
+                <button class="element__like" type="button"></button>
             </div>
             <div class="element">
                 <img src="blocks/element/__image/images/karachaevsk.jpg" alt="Карачаево-Черкессия" class="element__image">
@@ -64,8 +54,19 @@
         </section>
     </main>
     <footer class="footer">
-        &copy; 2020 Mesto Russia
+        <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <form class="popup__edit-form" name="edit-form">
+                <h2 class="popup__heading">Редактировать профиль</h2>
+                <input class="popup__input" type="text" name="profile-name" id="profile-name" placeholder="" required>
+                <input class="popup__input" type="text" name="profile-vocation" id="profile-vocation" placeholder="" required>
+                <button class="popup__save-btn" type="submit">Сохранить</button>
+            </form>
+            <button class="popup__close" type="button"></button>
+        </div>
+    </div>
     <script src="scripts/index.js"></script>
 </body>
 </html>

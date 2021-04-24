@@ -6,31 +6,29 @@ let profileName = document.querySelector('.profile__name');
 let inputVocation = document.querySelector('#profile-vocation');
 let profileVocation = document.querySelector('.profile__vocation');
 
+let editBtn = document.querySelector('.profile__edit-btn');
+let closeBtn = document.querySelector('.popup__close');
+let editForm = document.querySelector('.popup__edit-form');
+
 function popupOpen () {
-    popup.classList.add('popup_opened_open')
+    popup.classList.add('popup_open')
     inputName.value = profileName.textContent
     inputVocation.value = profileVocation.textContent
 };
 
-function popupClose (evt) {
-    evt.preventDefault()
-    popup.classList.remove('popup_opened_open')
+function popupClose () {
+    popup.classList.remove('popup_open')
     inputName.value = ''    
     inputVocation.value = ''
 };
 
 function popupSave (evt) {
     evt.preventDefault()
-    popup.classList.remove('popup_opened_open')
     profileName.textContent = inputName.value
     profileVocation.textContent = inputVocation.value
+    popupClose()
 };
 
-let editBtn = document.querySelector('.profile__edit-btn');
 editBtn.addEventListener('click', popupOpen);
-
-let closeBtn = document.querySelector('.popup__close');
 closeBtn.addEventListener('click', popupClose);
-
-let saveBtn = document.querySelector('.popup__save-btn');
-saveBtn.addEventListener('click', popupSave);
+editForm.addEventListener('submit', popupSave);

@@ -11,4 +11,4 @@
 5. _Java Script_  
 ------
 ## Ссылка на проект  
-[https://topgun-88.github.io/mesto/imdex.html]  
+[https://topgun-88.github.io/mesto/index.html]  

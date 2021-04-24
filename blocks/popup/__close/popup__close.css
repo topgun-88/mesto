@@ -21,7 +21,7 @@
     outline: none;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 600px) {
     .popup__close {
         width: 26px;
         height: 26px;

@@ -1,5 +1,5 @@
 .popup__save-btn {
-    margin: 48px 36px 0;
+    margin: 48px 36px 37px;
     padding: 0;
     height: 50px;
     background: #000000;
@@ -19,9 +19,9 @@
     cursor: pointer;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 600px) {
     .popup__save-btn {
-        margin: 44px 22px 0;
+        margin: 44px 22px 25px;
         height: 46px;
         font-size: 14px;
         line-height: 17px;
