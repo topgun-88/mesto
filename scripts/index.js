@@ -101,7 +101,7 @@ function closePopupFormAdd () {
 
 function submitFromAdd (evt) {
   evt.preventDefault();
-  crateNewElement (formAddElementName.value, formAddElementLink.value);
+  elementsContainer.prepend(createNewElement (formAddElementName.value, formAddElementLink.value));
   closePopupFormAdd();
 };
 
