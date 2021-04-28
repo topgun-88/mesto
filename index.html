@@ -21,36 +21,14 @@
             <button class="profile__add-btn" type="button"></button>
         </section>
         <section class="elements">
-            <div class="element">
-                <img src="blocks/element/__image/images/karachaevsk.jpg" alt="Карачаевск" class="element__image">
-                <h2 class="element__title">Карачаевск</h2>
-                <button class="element__like element__like_active"></button>
-            </div>
-            <div class="element">
-                <img src="blocks/element/__image/images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__like" type="button"></button>
-            </div>
-            <div class="element">
-                <img src="blocks/element/__image/images/dombay.jpg" alt="Домбай" class="element__image">
-                <h2 class="element__title">Домбай</h2>
-                <button class="element__like" type="button"></button>
-            </div>
-            <div class="element">
-                <img src="blocks/element/__image/images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button class="element__like" type="button"></button>
-            </div>
-            <div class="element">
-                <img src="blocks/element/__image/images/dombay.jpg" alt="Домбай" class="element__image">
-                <h2 class="element__title">Домбай</h2>
-                <button class="element__like" type="button"></button>
-            </div>
-            <div class="element">
-                <img src="blocks/element/__image/images/karachaevsk.jpg" alt="Карачаево-Черкессия" class="element__image">
-                <h2 class="element__title">Карачаево-Черкессия</h2>
-                <button class="element__like" type="button"></button>
-            </div>
+            <template id="templElement">
+                <div class="element">
+                    <img src="" alt="" class="element__image">
+                    <button class="element__del" type="button"></button>
+                    <h2 class="element__title"></h2>
+                    <button class="element__like" type="button"></button>
+                </div>
+            </template>
         </section>
     </main>
     <footer class="footer">
@@ -64,6 +42,13 @@
                 <input class="popup__input" type="text" name="profile-vocation" id="profile-vocation" placeholder="" required>
                 <button class="popup__save-btn" type="submit">Сохранить</button>
             </form>
+            <form class="popup__add-form" name="add-form">
+                <h2 class="popup__heading">Новое место</h2>
+                <input class="popup__input" type="text" name="element-name" id="element-name" placeholder="Название" required>
+                <input class="popup__input" type="text" name="element-link" id="element-link" placeholder="Ссылка на картинку" required>
+                <button class="popup__save-btn" type="submit">Сохранить</button>
+            </form>
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="" class="popup__element-image">
             <button class="popup__close" type="button"></button>
         </div>
     </div>

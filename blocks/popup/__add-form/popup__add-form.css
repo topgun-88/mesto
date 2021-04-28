@@ -1,4 +1,4 @@
-.popup__edit-form {
+.popup__add-form {
     grid-column-start: 2;
     grid-row-start: 2;
     background: #FFFFFF;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 600px) {
-    .popup__edit-form {
+    .popup__add-form {
         width: 282px;
     }
 }

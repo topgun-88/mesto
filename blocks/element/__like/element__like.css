@@ -3,6 +3,7 @@
     width: 22px;
     height: 19px;
     margin: auto;
+    z-index: 10;
     background-image: url(images/like_disabled.svg);
     background-position: center;
     background-repeat: no-repeat;

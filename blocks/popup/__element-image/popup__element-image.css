@@ -1,0 +1,12 @@
+.popup__element-image {    
+    grid-column-start: 2;
+    grid-row-start: 2;
+    max-width: 75vw;
+    max-height: 75vh;
+    object-fit: contain;
+    object-position: center;
+    
+    visibility: visible;
+    opacity: 1;
+    transition: visibility .5s, opacity .5s ease;
+}
