@@ -1,4 +1,4 @@
-.popup__add-form {
+.popup__form {
     grid-column-start: 2;
     grid-row-start: 2;
     background: #FFFFFF;
@@ -6,14 +6,11 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility .5s, opacity .5s ease;
     width: 430px;
 }
 
 @media (max-width: 600px) {
-    .popup__add-form {
+    .popup__form {
         width: 282px;
     }
 }
