@@ -61,18 +61,25 @@ formAdd.addEventListener('submit', submitFromAdd);
 
 popupElementImageCloseBtn.addEventListener('click', closePopupElementImage);
 
+function showPopup (obj) {
+  obj.classList.add('popup_open');
+};
+
+function hidePopup (obj) {
+  obj.classList.remove('popup_open');
+};
 
 function openPopupFormEdit () {
   formEditName.value = profileName.textContent;
   formEditVocation.value = profileVocation.textContent;
-  popupFormEdit.classList.add('popup_open');
-}
+  showPopup(popupFormEdit);
+};
 
 function closePopupFormEdit () {
   formEditName.value = '';
   formEditVocation.value = '';
-  popupFormEdit.classList.remove('popup_open');
-}
+  hidePopup(popupFormEdit);
+};
 
 function submitFromEdit (evt) {
   evt.preventDefault();
@@ -83,14 +90,14 @@ function submitFromEdit (evt) {
 
 
 function openPopupFormAdd () {
-  popupFormAdd.classList.add('popup_open');
-}
+  showPopup(popupFormAdd);
+};
 
 function closePopupFormAdd () {
   formAddElementName.value = '';
   formAddElementLink.value = '';
-  popupFormAdd.classList.remove('popup_open');
-}
+  hidePopup(popupFormAdd);
+;}
 
 function submitFromAdd (evt) {
   evt.preventDefault();
@@ -102,11 +109,11 @@ function submitFromAdd (evt) {
 function closePopupElementImage () {
   elementlImage.src = '';
   elementlImage.alt = '';
-  popupElementImage.classList.remove('popup_open');
-}
+  hidePopup(popupElementImage);
+};
 
 
-function crateNewElement (name, link) {
+function createNewElement (name, link) {
   const templElement = document.querySelector('#templElement').content;
   const newElement = templElement.querySelector('.element').cloneNode(true);
   
@@ -128,10 +135,9 @@ function crateNewElement (name, link) {
     elementlImage.src = link;
     elementlImage.alt = name;
     popupElementImageTitle.textContent = name;
-    popupElementImage.classList.add('popup_open');
+    showPopup(popupElementImage);
   });
-
-  elementsContainer.prepend(newElement);
+  return newElement;
 };
 
-initialCards.forEach (el => crateNewElement(el.name, el.link));
+initialCards.forEach (el => elementsContainer.prepend(createNewElement(el.name, el.link)));
