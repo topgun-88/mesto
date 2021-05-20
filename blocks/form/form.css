@@ -1,4 +1,4 @@
-.popup__form {
+.form {
     grid-column-start: 2;
     grid-row-start: 2;
     background: #FFFFFF;
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 600px) {
-    .popup__form {
+    .form {
         width: 282px;
     }
 }

@@ -1,7 +1,7 @@
 const popupFormEdit = document.querySelector('#popupEditForm');
-const formEdit = document.querySelector('#popupEditForm');
+const formEdit = popupFormEdit.querySelector('.form');
 const popupFormEditOpenBtn = document.querySelector('.profile__edit-btn');
-const popupFormEditCloseBtn = formEdit.querySelector('.popup__close');
+const popupFormEditCloseBtn = popupFormEdit.querySelector('.popup__close');
 
 const formEditName = formEdit.querySelector('#profile-name');
 const profileName = document.querySelector('.profile__name');
@@ -10,9 +10,9 @@ const formEditVocation = document.querySelector('#profile-vocation');
 const profileVocation = document.querySelector('.profile__vocation');
 
 const popupFormAdd = document.querySelector('#popupAddForm');
-const formAdd = document.querySelector('#popupAddForm');
+const formAdd = popupFormAdd.querySelector('.form');
 const popupFormAddOpenBtn = document.querySelector('.profile__add-btn');
-const popupFormAddCloseBtn = formAdd.querySelector('.popup__close');
+const popupFormAddCloseBtn = popupFormAdd.querySelector('.popup__close');
 
 const formAddElementName = formAdd.querySelector('#element-name');
 const formAddElementLink = formAdd.querySelector('#element-link');
@@ -61,17 +61,33 @@ formAdd.addEventListener('submit', submitFromAdd);
 
 popupElementImageCloseBtn.addEventListener('click', closePopupElementImage);
 
+function hidePopupOnEsc(evt, obj) {
+  console.log (evt.key)
+  if (evt.key === '') {}
+};
+
+function hidePopupOnEsc (evt) {
+  const openedPopup = document.querySelector('.popup_open')
+  if (evt.key === 'Escape') {hidePopup(openedPopup)}
+};
+
 function showPopup (obj) {
   obj.classList.add('popup_open');
+  obj.addEventListener('click', (evt) => {
+    if (evt.target.classList.value === 'popup popup_open') {hidePopup(obj)}
+  });
+  document.addEventListener('keydown', hidePopupOnEsc);
 };
 
 function hidePopup (obj) {
   obj.classList.remove('popup_open');
+  document.removeEventListener('keydown', hidePopupOnEsc);
 };
 
 function openPopupFormEdit () {
   formEditName.value = profileName.textContent;
   formEditVocation.value = profileVocation.textContent;
+  enableValidation(formEdit);
   showPopup(popupFormEdit);
 };
 
@@ -90,6 +106,7 @@ function submitFromEdit (evt) {
 
 
 function openPopupFormAdd () {
+  enableValidation(formAdd);
   showPopup(popupFormAdd);
 };
 

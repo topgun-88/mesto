@@ -1,5 +1,5 @@
-.popup__save-btn {
-    margin: 48px 36px 37px;
+.form__submit {
+    margin: 31px 36px 37px;
     padding: 0;
     height: 50px;
     background: #000000;
@@ -14,13 +14,13 @@
     transition: opacity .3s ease-in;
 }
 
-.popup__save-btn:hover {
+.form__submit:hover {
     opacity: .6;
     cursor: pointer;
 }
 
 @media (max-width: 600px) {
-    .popup__save-btn {
+    .form__submit {
         margin: 44px 22px 25px;
         height: 46px;
         font-size: 14px;
