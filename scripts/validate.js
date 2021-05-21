@@ -1,9 +1,11 @@
 const showInputError = (formElement, inputElement, errorMessage) => {
+    inputElement.classList.add('form__input_invalid');
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     errorElement.textContent = errorMessage;
   };
   
 const hideInputError = (formElement, inputElement) => {
+    inputElement.classList.remove('form__input_invalid');
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     errorElement.textContent = '';
 };
@@ -36,17 +38,20 @@ const setEventListeners = (formElement) => {
 
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
-        checkInputValidity(formElement, inputElement);
-        inputElement.addEventListener('input', function () {            
+        inputElement.addEventListener('input', function () {
             checkInputValidity(formElement, inputElement);
             toggleButtonState(inputList, buttonElement);
         });
     });
 };
 
-const enableValidation = (formElement) => {
-    formElement.addEventListener('submit', function (evt) {
-        evt.preventDefault();
+const enableValidation = () => {
+    formList.forEach((formElement) => {
+        formElement.addEventListener('submit', function (evt) {
+            evt.preventDefault();
+        });
+        setEventListeners(formElement);
     });
-    setEventListeners(formElement);
 };
+
+enableValidation()

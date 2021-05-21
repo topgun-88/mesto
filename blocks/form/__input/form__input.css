@@ -12,10 +12,6 @@
     color: #000;
 }
 
-.form__input:invalid {
-    border-bottom: 1px solid red;
-}
-
 @media (max-width: 600px) {
     .form__input {
         margin: 17px 22px 0;
