@@ -28,8 +28,9 @@ function showPopup (obj) {
 
   toggleButtonState(inputList, buttonElement);
 
+  const currentForm = obj.querySelector('.form')
   inputList.forEach((inputElement) => {
-    hideInputError(obj.querySelector('.form'), inputElement)
+    hideInputError(currentForm, inputElement)
   });
 };
 
