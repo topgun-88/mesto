@@ -26,11 +26,11 @@ function showPopup (obj) {
   const inputList = Array.from(obj.querySelectorAll('.form__input'));
   const buttonElement = obj.querySelector('.form__submit');
 
-  toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement, config);
 
   const currentForm = obj.querySelector('.form')
   inputList.forEach((inputElement) => {
-    hideInputError(currentForm, inputElement)
+    hideInputError(currentForm, inputElement, config)
   });
 };
 

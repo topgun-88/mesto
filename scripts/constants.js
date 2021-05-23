@@ -1,5 +1,3 @@
-const formList = Array.from(document.querySelectorAll('.form'));
-
 const popupFormEdit = document.querySelector('#popupEditForm');
 const formEdit = popupFormEdit.querySelector('.form');
 const popupFormEditOpenBtn = document.querySelector('.profile__edit-btn');
@@ -58,3 +56,11 @@ const initialCards = [
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
     }
   ];
+
+  const config = {
+    formSelector: '.form',
+    inputSelector: '.form__input',
+    submitButtonSelector: '.form__submit',
+    inactiveButtonClass: 'form__submit_inactive',
+    inputErrorClass: 'form__input_invalid',
+  };
