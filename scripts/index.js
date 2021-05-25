@@ -14,8 +14,7 @@ function hidePopupOnEsc (evt) {
 };
 
 function hidePopupByOverlayClick (evt) {
-  const openedPopup = document.querySelector('.popup_open')
-  if (evt.target.classList.contains('popup_open')) {hidePopup(openedPopup)}
+  if (evt.target.classList.contains('popup_open')) {hidePopup(evt.target)}
 };
 
 function showPopup (obj) {
@@ -32,6 +31,9 @@ function showPopup (obj) {
   inputList.forEach((inputElement) => {
     hideInputError(currentForm, inputElement, config)
   });
+  /* если скрыть форму с ошибками, то при последующем открытии 
+  останутся спаны на пустых полях, по этому оставил скрытие 
+  ошибок при открытии формы */
 };
 
 function hidePopup (obj) {
