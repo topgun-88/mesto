@@ -27,8 +27,6 @@ function openPopupFormEdit () {
 
 function closePopupFormEdit () {
   hidePopup(popupFormEdit);
-  formEditName.value = '';
-  formEditVocation.value = '';
 };
 
 function submitFromEdit (evt) {
@@ -44,20 +42,18 @@ function openPopupFormAdd () {
 };
 
 function closePopupFormAdd () {
-  formAddElementName.value = '';
-  formAddElementLink.value = '';
   hidePopup(popupFormAdd);
 ;}
 
-function addNewCard (card) {
+function addNewCard (item, cardSelector) {
+	const card = new Card(item, cardSelector);
 	const cardElement = card.generateCard();
 	elementsContainer.prepend(cardElement);
 }
 
 function submitFromAdd (evt) {
   evt.preventDefault();
-	const card = new Card({name: formAddElementName.value, link: formAddElementLink.value}, '#templElement');
-  addNewCard (card)
+  addNewCard ({name: formAddElementName.value, link: formAddElementLink.value}, '#templElement')
   closePopupFormAdd();
 };
 
@@ -69,8 +65,7 @@ function closePopupElementImage () {
 };
 
 initialCards.forEach((item) => {
-	const card = new Card(item, '#templElement');
-  addNewCard (card)
+  addNewCard (item, '#templElement')
 });
 
 const formEditValidator = new FormValidator(validationConfig, formEdit)

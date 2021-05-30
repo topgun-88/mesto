@@ -17,4 +17,7 @@ export function hidePopup (obj) {
     obj.classList.remove('popup_open');
     obj.removeEventListener('click', hidePopupByOverlayClick);
     document.removeEventListener('keydown', hidePopupOnEsc);
-  };
+    if (obj.querySelector('.form')) {
+        obj.querySelector('.form').reset();
+    }
+};
