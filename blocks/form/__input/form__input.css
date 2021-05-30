@@ -10,6 +10,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #000;
+    outline: none;
 }
 
 @media (max-width: 600px) {
