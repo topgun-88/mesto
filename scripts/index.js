@@ -37,6 +37,8 @@ function submitFromEdit (evt) {
 };
 
 function openPopupFormAdd () {
+  formAdd.reset();
+  /* не могу делать ресет в closePopupForm... т.к. есть еще hidePopupOnEsc и hidePopupByOverlayClick */
   formAddValidator.refreshValidation()
   showPopup(popupFormAdd);
 };
@@ -45,7 +47,7 @@ function closePopupFormAdd () {
   hidePopup(popupFormAdd);
 ;}
 
-function addNewCard (item, cardSelector) {
+function addNewCard (item, cardSelector, elementsContainer) {
 	const card = new Card(item, cardSelector);
 	const cardElement = card.generateCard();
 	elementsContainer.prepend(cardElement);
@@ -53,10 +55,9 @@ function addNewCard (item, cardSelector) {
 
 function submitFromAdd (evt) {
   evt.preventDefault();
-  addNewCard ({name: formAddElementName.value, link: formAddElementLink.value}, '#templElement')
+  addNewCard ({name: formAddElementName.value, link: formAddElementLink.value}, '#templElement', elementsContainer)
   closePopupFormAdd();
 };
-
 
 function closePopupElementImage () {
   elementlImage.src = '';
@@ -65,7 +66,7 @@ function closePopupElementImage () {
 };
 
 initialCards.forEach((item) => {
-  addNewCard (item, '#templElement')
+  addNewCard (item, '#templElement', elementsContainer)
 });
 
 const formEditValidator = new FormValidator(validationConfig, formEdit)
