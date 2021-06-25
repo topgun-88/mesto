@@ -1,11 +1,10 @@
-import {showPopup} from './utils/utils.js';
-import {popupElementImage, elementlImage, popupElementImageTitle} from './utils/constants.js';
 export default class Card {
-    constructor(data, cardSelector) {
+    constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
-    }
+        this._handleCardClick = handleCardClick;
+    };
   
     _getTemplate() {
         const cardElement = document
@@ -15,7 +14,7 @@ export default class Card {
         .cloneNode(true);
 
         return cardElement;
-    }
+    };
   
     generateCard() {
         this._element = this._getTemplate();
@@ -26,31 +25,31 @@ export default class Card {
         this._setEventListeners();
   
         return this._element;
-    }
+    };
   
     _setEventListeners() {
-        this._element.querySelector('.element__like').addEventListener('click', () => {
-            this._handleLikeClick ();
+        this._elementLike = this._element.querySelector('.element__like');
+        this._elementLike.addEventListener('click', () => {
+            this._handleLikeClick();
         });
         this._element.querySelector('.element__del').addEventListener('click', () => {
             this._handleDeleteClick();
         });
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._handleImageClick();
+            this._handleCardClick();
         });
-    }
+    };
+
+    /* _handleCardClick() {
+        popupWithImage.open(this._link, this._name);
+    }; */
   
     _handleLikeClick() {
-        this._element.querySelector('.element__like').classList.toggle('element__like_active');
-    }
+        this._elementLike.classList.toggle('element__like_active');
+    };
+
     _handleDeleteClick() {
         this._element.remove();
         this._element = null;
-    }
-    _handleImageClick() {
-        elementlImage.src = this._link;
-        elementlImage.alt = this._name;
-        popupElementImageTitle.textContent = this._name;
-        showPopup(popupElementImage);
-    }
-  }  
+    };
+  };
