@@ -1,18 +1,7 @@
-.element__like {
+.element__like {    
     grid-area: like;
-    width: 22px;
-    height: 19px;
-    margin: auto;
-    background-image: url(images/like_disabled.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: opacity .3s ease-in;
-    justify-self: right;
-    border: 0;
-    background-color: rgba(0,0,0,0);
-}
-
-.element__like:hover {
-    opacity: .6;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

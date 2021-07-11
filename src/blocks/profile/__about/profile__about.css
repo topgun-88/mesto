@@ -1,6 +1,6 @@
-.profile__vocation {
+.profile__about {
     margin: 16px 0 0;
-    grid-area: vocation;
+    grid-area: about;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 937px) {
-    .profile__vocation {
+    .profile__about {
         margin: 14px 0 36px;
         font-size: 14px;
         line-height: 17px;

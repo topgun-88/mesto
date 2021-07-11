@@ -1,0 +1,26 @@
+.profile__avatar-btn {
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(0, 0, 0);
+}
+
+.profile__avatar-btn:hover {
+    background-image: url(images/avatarEdit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.profile__avatar-btn:focus {
+    outline: none;
+}
+
+@media (max-width: 937px) {
+    .profile__avatar-btn {
+        margin-bottom: 26px;
+    }
+}
