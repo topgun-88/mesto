@@ -2,9 +2,13 @@ import Popup from './Popup.js'
 export default class PopupWithForm extends Popup {
     constructor (popupSelector, submitForm) {
         super(popupSelector);
-        this.form = this._popup.querySelector('.form');
+        this._form = this._popup.querySelector('.form');
         this._submitForm = submitForm;
-        this.submitBtn = this.form.querySelector('.form__submit')
+        this._submitBtn = this._form.querySelector('.form__submit')
+    }
+
+    getForm() {
+        return this._form
     }
 
     _getInputValues() {
@@ -17,16 +21,28 @@ export default class PopupWithForm extends Popup {
     }
 
     close() {
-        this.form.reset();
+        this._form.reset();
         super.close();
     }
 
     setEventListeners() {
-        this.form.addEventListener('submit', (evt) => {
+        this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
             const inputValues = this._getInputValues()
             this._submitForm(inputValues);
         });
         super.setEventListeners();
+    }
+    
+    setDeletedCard(deletedCard) {
+        this._deletedCard = deletedCard
+    }
+
+    getDeletedCard() {
+        return this._deletedCard
+    }
+
+    renderLoading (text) {
+        this._submitBtn.textContent = text
     }
 }

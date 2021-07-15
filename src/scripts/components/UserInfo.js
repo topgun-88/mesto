@@ -12,9 +12,13 @@ export default class UserInfo {
     setUserInfo(item) {
         this._name.textContent = item.name;
         this._about.textContent = item.about;
-        this.id = item._id;
+        this._id = item._id;
         if (item.avatar) {
             this._avatar.src = item.avatar;
         }
+    }
+
+    getId() {
+        return this._id
     }
 }

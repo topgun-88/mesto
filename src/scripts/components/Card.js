@@ -1,16 +1,21 @@
 export default class Card {
-    constructor(data, cardSelector, handleCardClick, handleCardDelete, myCard, handleLikeClick) {
-        this._name = data.name;
-        this._link = data.link;
-        this.id = data._id;
-        this._likes = data.likes;
-        this._cardSelector = cardSelector;
-        this._handleLikeClick = handleLikeClick;
-        this._handleCardClick = handleCardClick;
-        this._handleCardDelete = handleCardDelete;
-        this._myCard = myCard;
-        
+    constructor(data) {
+        this._name = data.item.name;
+        this._link = data.item.link;
+        this._id = data.item._id;
+        this._likes = data.item.likes;
+        this._ownerId = data.item.owner._id
+        this._cardSelector = data.cardSelector;
+        this._handleLikeClick = data.handleLikeClick;
+        this._handleCardClick = data.handleCardClick;
+        this._handleCardDelete = data.handleCardDelete;
+        this._myId = data.myId;        
     };
+
+    getId() {
+        return this._id
+    }
+
     _getTemplate() {
         const cardElement = document
         .querySelector(this._cardSelector)
@@ -33,14 +38,17 @@ export default class Card {
         this._elementImage = this._element.querySelector('.element__image');
         this._elementImage.src = this._link;
         this._elementImage.alt = this._name;
-        if (this._myCard) {this._element.querySelector('.element__del').classList.add('element__del_active')};
+        this._elementLike = this._element.querySelector('.element__like-icon');
+        if (this._ownerId === this._myId) {this._element.querySelector('.element__del').classList.add('element__del_active')};
         this._setEventListeners();
+        if (this.isLiked()){
+          this.likeToggle()
+        };
   
         return this._element;
     };
   
     _setEventListeners() {
-        this._elementLike = this._element.querySelector('.element__like-icon');
         this._elementLike.addEventListener('click', () => {
             this._handleLikeClick();
         });
@@ -61,9 +69,9 @@ export default class Card {
         this._element = null;
     };
 
-    isLiked (myId) {
-        return this._likes.some(function(el) {
-            return el._id === myId;
+    isLiked () {
+        return this._likes.some((el) => {
+            return el._id === this._myId;
         });
     };
   };
